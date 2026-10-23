@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kanakku · what was published, and when</title>
+<meta name="description" content="Kanakku (கணக்கு, Tamil for account) keeps every version of a public statistic in an archive that can't be quietly edited, and tells a real revision from rounding. A year of RBI forex reserves, checked in your browser.">
+<meta name="theme-color" content="#e8e1d3">
+<meta property="og:title" content="Kanakku · what was published, and when">
+<meta property="og:description" content="A tamper-evident archive of public statistics that tells revisions from rounding. 59 weekly RBI releases: zero revisions, and you can check every hash in your browser. By Shyam Kumar.">
+<meta property="og:image" content="https://shyamvasansathiskumar-ux.github.io/kanakku/og.png">
+<meta property="og:url" content="https://shyamvasansathiskumar-ux.github.io/kanakku/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://shyamvasansathiskumar-ux.github.io/kanakku/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="base.css" integrity="sha384-CW9d+x1LVNUYRnhj/nHKnvx11aHz0dTKkRuaHj/mUe1uykW/fkcRCp3DEFJfJu/H">
+<link rel="stylesheet" href="site.css" integrity="sha384-EcMNIWXbTyfOEzqHRDChQ9fkDsg6xs59+7THBTHjj/p85jDsBq/s+5Jxwcf9kw9E">
+<script src="boot.js" integrity="sha384-KkVxZH+YthLKboAk9MUp0+EpuWbnqtsLSMCUtiiiTpz58T6guBx1keqHrlh7QNl+"></script>
+</head>
+<body>
+<div class="loader" aria-hidden="true">
+  <div class="who"><span class="label bare">Kanakku · கணக்கு</span><span class="label bare">Shyam Kumar</span></div>
+  <div class="mid"><div class="bar"><i></i></div><div class="meta"><span class="label bare">Loading the ledger</span><span class="label bare pct"><b>00</b>%</span></div></div>
+</div>
+<canvas id="world" aria-hidden="true"></canvas>
+<ol class="rail" aria-label="Chapters"></ol>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"></span>Kanakku <span class="tamil">கணக்கு</span></a>
+    <ul>
+      <li><a href="#chain">The chain</a></li>
+      <li><a href="#lab">Tamper lab</a></li>
+      <li><a href="#rounding">Rounding</a></li>
+      <li><a href="#year">The year</a></li>
+      <li><a href="#verify">Verify</a></li>
+    </ul>
+    <a class="btn sm ghost" href="https://github.com/shyamvasansathiskumar-ux/kanakku" target="_blank" rel="noopener noreferrer">Source <span class="arr">↗</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 00 · hero -->
+  <section class="hero" id="hero" data-stage="0" data-chapter="Kanakku">
+    <div class="wrap hero-in">
+      <p class="label" data-intro>Public statistics · tamper-evident archive · Python</p>
+      <h1 class="display hero-title" data-intro-split>Kana<em>kku</em></h1>
+      <p class="hero-tamil" data-intro>கணக்கு <span class="sep"></span> <em>account, reckoning</em></p>
+      <div class="hero-foot">
+        <p class="lede" data-intro>When a government dashboard updates a number, the old one disappears. Kanakku keeps <strong>every version, in a record that can't be quietly edited,</strong> and tells a real revision from a number that only moved because it was rounded.</p>
+        <div class="hero-check card" data-intro>
+          <span class="label bare">Checked in your browser, just now</span>
+          <div class="hc-row"><span class="mono small">Releases</span><b id="hcN">–</b></div>
+          <div class="hc-row"><span class="mono small">Head</span><code id="hcHead">computing…</code></div>
+          <div class="hc-row"><span class="mono small">Chain</span><span class="pill ask" id="hcOk">checking</span></div>
+        </div>
+      </div>
+      <div class="hero-cta" data-intro>
+        <a class="btn acc" href="#lab">Try to tamper with it <span class="arr">→</span></a>
+        <a class="btn ghost" href="#year">See the year of data</a>
+      </div>
+    </div>
+    <div class="wrap hero-meta" data-intro>
+      <span class="label bare">59 weekly RBI releases</span><span class="label bare">2,360 figures</span><span class="label bare">0 revisions</span><span class="label bare scroll-cue">Scroll</span>
+    </div>
+  </section>
+
+  <!-- 01 · the problem -->
+  <section id="problem" data-stage="1" data-chapter="The problem">
+    <div class="wrap grid">
+      <div class="col-l"><p class="label" data-scramble>01 · The problem</p></div>
+      <div class="col-r stack">
+        <h2 class="h1" data-split>The page updates. <em>The old figure goes.</em></h2>
+        <p class="body big" data-rise>Fuel prices, fertiliser sales, mandi rates, forex reserves: the numbers India argues over live on pages that are updated in place. Revising a provisional figure is normal and often right. But once the old figure is gone, nobody outside the publisher can show what was official on a given day, or prove whether a number was changed at all.</p>
+        <div class="ask-row" data-stagger>
+          <div class="ask card"><b>“What did the page say on 1 May?”</b><span>Usually unanswerable.</span></div>
+          <div class="ask card"><b>“Was last week's figure changed?”</b><span>Usually a matter of opinion.</span></div>
+          <div class="ask card"><b>“Is this archive itself honest?”</b><span>Here, something you can check.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track" data-speed="46"><span>What was published</span><span>and when</span><span>Revision or rounding?</span><span>⌊n/2⌋</span><span>Every week, sealed to the last</span></div></div>
+
+  <!-- 02 · the chain (pinned horizontal) -->
+  <section id="chain" class="how" data-stage="2" data-chapter="The chain">
+    <div class="wrap how-head">
+      <p class="label" data-scramble>02 · The chain</p>
+      <h2 class="h1" data-split>Each week sealed <em>to the one before.</em></h2>
+      <p class="body" data-rise>Every snapshot is stored as a record carrying the SHA-256 fingerprint of the record before it. Change one figure in one old week and every fingerprint after it stops matching. The newest fingerprint, the <em>head</em>, is then published somewhere the archive keeper doesn't control.</p>
+    </div>
+    <div class="hscroll" id="hscroll">
+      <div class="cards" id="cards">
+        <article class="step card">
+          <header><span class="num">1</span><span class="label bare">Fetch</span></header>
+          <h3 class="h3">Politely, and fingerprinted first.</h3>
+          <div class="live"><div class="kv"><span>requests</span><b class="mono">one at a time</b></div><div class="kv"><span>identified as</span><b class="mono hl">Kanakku/0.1</b></div><div class="kv"><span>robots.txt</span><b class="mono">respected</b></div></div>
+          <p class="fine">The raw bytes are hashed before anything reads them, so the archive can always show exactly what was served.</p>
+        </article>
+        <article class="step card">
+          <header><span class="num">2</span><span class="label bare">Read</span></header>
+          <h3 class="h3">Into a table that always encodes the same way.</h3>
+          <div class="live"><div class="kv"><span>numbers</span><b class="mono">integers only</b></div><div class="kv"><span>keys, rows</span><b class="mono">sorted</b></div><div class="kv"><span>fingerprint</span><b class="mono hl">table_sha256</b></div></div>
+          <p class="fine">No floating point anywhere, so the same table is the same bytes on every machine, in Python and in this browser.</p>
+        </article>
+        <article class="step card">
+          <header><span class="num">3</span><span class="label bare">Seal</span></header>
+          <h3 class="h3">Each record holds the last one's hash.</h3>
+          <div class="live" id="sealLive"><div class="kv"><span>seq 57</span><b class="mono" id="h57">–</b></div><div class="kv"><span>seq 58 prev</span><b class="mono hl" id="p58">–</b></div><div class="kv"><span>seq 58</span><b class="mono" id="h58">–</b></div></div>
+          <p class="fine">These are the real last two records, hashed in your browser. The middle line has to equal the first, or the chain is broken.</p>
+        </article>
+        <article class="step card final">
+          <header><span class="num">4</span><span class="label bare">Witness</span></header>
+          <h3 class="h3">Publish the head somewhere else.</h3>
+          <div class="live"><div class="kv"><span>published head</span><b class="mono" id="wHead">–</b></div><div class="kv"><span>matches</span><b class="mono hl" id="wOk">–</b></div></div>
+          <p class="fine">A chain can't see its own end being cut off, or a keeper rewriting all of it and re-sealing every record. A head kept somewhere else can.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · tamper lab -->
+  <section id="lab" class="ink-band" data-stage="3" data-chapter="Tamper lab">
+    <div class="wrap">
+      <div class="vault-head">
+        <p class="label" data-scramble>03 · Tamper lab</p>
+        <h2 class="h1" data-split>Go on. <em>Rewrite history.</em></h2>
+        <p class="body" data-rise>This is the real archive, all 59 records, loaded into your browser. Pick an attack. The page forges a copy and runs the same checks as the Python verifier: once with the chain alone, once against the published head.</p>
+      </div>
+      <div class="lab">
+        <div class="lab-pick" role="group" aria-label="Attack" id="labPick"></div>
+        <label class="lab-at"><span class="label bare">On week</span><input type="range" id="labAt" min="0" max="57" value="20" aria-label="Which week to attack"><b id="labAtTxt">–</b></label>
+        <div class="lab-out" id="labOut" aria-live="polite"></div>
+        <div class="lab-strip" id="labStrip" aria-hidden="true"></div>
+      </div>
+      <p class="fine on-ink">Nothing here touches the published file. Each attack works on a copy in memory and is discarded.</p>
+    </div>
+  </section>
+
+  <!-- 04 · rounding -->
+  <section id="rounding" data-stage="4" data-chapter="Rounding">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>04 · Revision or rounding?</p>
+        <h2 class="h2" data-split>One line of maths, <em>143 false alarms gone.</em></h2>
+        <p class="body" data-rise>The RBI prints each week's level and its change from last week. Level minus change should equal last week's level. It often misses by one, because each figure was rounded on its own. Round <em>n</em> figures and combine them: rounding alone can move the result by at most <b>n/2</b>, and since the result is a whole number, by at most <b>⌊n/2⌋</b>. Anything bigger can't be rounding.</p>
+      </div>
+      <div class="col-r stack">
+        <div class="bound card" data-rise>
+          <div class="bound-top">
+            <label><span class="label bare">Figures combined, n</span><input type="range" id="bn" min="2" max="9" value="3" aria-label="Number of rounded figures"></label>
+            <div class="bound-out"><span class="mono small">most rounding can explain</span><b id="bOut">1</b></div>
+          </div>
+          <p class="fine" id="bNote"></p>
+        </div>
+        <div class="toggle card" data-rise>
+          <div class="toggle-head">
+            <span class="label bare">580 week-to-week checks</span>
+            <div class="filter" role="group" aria-label="Mode">
+              <button type="button" class="chip on" data-mode="naive" aria-pressed="true">Plain diff</button>
+              <button type="button" class="chip" data-mode="aware" aria-pressed="false">Kanakku</button>
+            </div>
+          </div>
+          <div class="hist" id="hist" role="img" aria-label="Differences between implied and first-published levels"></div>
+          <p class="verdict" id="verdict" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · the year -->
+  <section id="year" data-stage="5" data-chapter="The year">
+    <div class="wrap">
+      <div class="shares-head">
+        <p class="label" data-scramble>05 · A year of reserves</p>
+        <h2 class="h1" data-split>59 Fridays. <em>Not one restated.</em></h2>
+        <p class="body" data-rise>Every release of the RBI's Weekly Statistical Supplement table <em>Foreign Exchange Reserves</em> from 5 September 2025 to 16 October 2026. Move along the line: each week shows what was first published, what the next release implies it was, and the rupee rate the table itself implies.</p>
+      </div>
+      <div class="year card" data-rise>
+        <div class="year-top">
+          <div class="filter" role="group" aria-label="Series" id="ySeries"></div>
+          <div class="filter" role="group" aria-label="Currency">
+            <button type="button" class="chip on" data-cur="usd" aria-pressed="true">US$ million</button>
+            <button type="button" class="chip" data-cur="inr" aria-pressed="false">₹ crore</button>
+          </div>
+        </div>
+        <div class="chart" id="chart"></div>
+        <dl class="week" id="week"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · gdp -->
+  <section id="gdp" data-stage="6" data-chapter="GDP">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>06 · When the base moves</p>
+        <h2 class="h2" data-split>Which growth figure <em>was official when?</em></h2>
+        <p class="body" data-rise>Not every series is as steady. In February 2026 India moved its national accounts to a 2022–23 base. Kanakku records that as a schema change, then the revisions on either side of it. Each figure was, for a while, <em>the</em> official one.</p>
+      </div>
+      <div class="col-r stack">
+        <div class="gdp-wrap" data-rise><table class="gdp" id="gdpTable"></table></div>
+        <p class="fine" id="gdpNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · verify -->
+  <section id="verify" data-stage="7" data-chapter="Verify">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>07 · Don't trust this page</p>
+        <h2 class="h2" data-split>Check it <em>yourself.</em></h2>
+        <p class="body" data-rise>This page re-computed every hash in your browser. You don't have to believe it either. The archive is a plain text file, one record per line; the verifier is a few hundred lines of Python with no dependencies.</p>
+        <div class="dl" data-rise>
+          <a class="btn ghost sm" href="archive.jsonl" download>archive.jsonl <span class="arr">↓</span></a>
+          <a class="btn ghost sm" href="heads.jsonl" download>heads.jsonl <span class="arr">↓</span></a>
+        </div>
+      </div>
+      <div class="col-r stack">
+<pre class="term" data-rise><span class="dim">$</span> git clone https://github.com/shyamvasansathiskumar-ux/kanakku
+<span class="dim">$</span> cd kanakku
+<span class="dim">$</span> python3 -m unittest -q tests.test_kanakku tests.test_site
+<span class="ok">OK</span>
+<span class="dim">$</span> python3 -m kanakku verify archive/rbi_fx.jsonl --heads archive/heads.jsonl
+<span class="dim">  "ok": true, "records": 59,</span>
+<span class="dim">  "head": …</span> <span class="acc" id="termHead">computing</span>
+<span class="dim">$</span> python3 experiments/run_eval.py   <span class="dim"># every number on this page</span></pre>
+        <p class="fine">Same head here and in the terminal means the file you downloaded is the file this page checked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · limits and safety -->
+  <section id="limits" data-stage="8" data-chapter="Limits">
+    <div class="wrap grid">
+      <div class="col-l stack">
+        <p class="label" data-scramble>08 · Where it stops</p>
+        <h2 class="h2" data-split>What it proves, <em>and what it can't.</em></h2>
+      </div>
+      <div class="col-r">
+        <ol class="limits-list" data-stagger>
+          <li><div><b>It proves what it saw, not what others were shown.</b> Only a publisher signing its own releases could prove that.</div></li>
+          <li><div><b>The year was read on one day.</b> Pages were collected on 23 October 2026, so an edit made before then shows up only through the implied-level checks. Weekly collection from now on closes that gap.</div></li>
+          <li><div><b>The witness is only as strong as where the head is published.</b> Here: a heads file and the git history. Independent witnesses would be stronger.</div></li>
+          <li><div><b>Two GDP figures come from news reports</b> of the official releases, and are marked as such.</div></li>
+          <li><div><b>The figures belong to the Reserve Bank of India,</b> reproduced with acknowledgement for research. Weekly collection waits for the Bank's reply to a request for permission.</div></li>
+          <li><div><b>This page keeps nothing about you.</b> No cookies, no analytics, no third-party requests, no forms. Everything above ran in your browser, on files from this site.</div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Kana<em>kku</em>.</p>
+    <div class="row">
+      <div class="links">
+        <a class="btn acc" href="https://github.com/shyamvasansathiskumar-ux/kanakku" target="_blank" rel="noopener noreferrer">Source and data <span class="arr">↗</span></a>
+        <a class="btn ghost" href="https://shyamvasansathiskumar-ux.github.io/stewards-room/">Stewards' Room, the same idea for F1 <span class="arr">→</span></a>
+        <a class="btn ghost" href="https://shyamvasansathiskumar-ux.github.io/">Portfolio <span class="arr">→</span></a>
+      </div>
+      <small>Shyam Kumar · REC Chennai · 2026 · Code: MIT licence<br>Figures: Reserve Bank of India (Weekly Statistical Supplement); MoSPI/PIB and cited press. Not affiliated with or endorsed by either.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2"></script>
+<script src="ScrollTrigger.min.js" integrity="sha384-xNHNOfrykny9oFwnmpfNbkSc6isny38d1GZvTRVuFV0l9fTMIZKhULvomyQJSMRl"></script>
+<script src="SplitText.min.js" integrity="sha384-iJQU/7haAHHrfeX4o0uooRF7Po6K7IhD+YU5dustu1NfalmSBYI7pbX6wAtx2f9j"></script>
+<script src="ScrambleTextPlugin.min.js" integrity="sha384-WLYL9YzLSUMXVSCeTvIeNU1RjveFpJK9drY7FtmMDfLeYdVjyx2/JoVDt/ujHexr"></script>
+<script src="lenis.min.js" integrity="sha384-FKTX0CNJ8ngN1oGMBReVu7mvjTJyjFiD5etb1NKnYxc+8eFI2O0KWnksTN+oTFcu"></script>
+<script src="motion.js" integrity="sha384-3Adv5Rin0p1fL5wm4LXMdHs6AVtghkC4BWgA5lG8GL4JhPRw4OPktOf8ZkupI1Xv"></script>
+<script src="ledger.js" integrity="sha384-RBMUdKlQlBLBAgf3l9Bp+McP+VBjR2mBuO4QeJV22urr+BGn8srCdvfO1E9ZAuBi"></script>
+<script src="app.js" integrity="sha384-WTSiVh0464NdMEUdWdGRXt7CAiLvijnDQoWbNyvS5HQPG89Vp+xGc6y8OiSmxe9t"></script>
+<script type="module" src="scene.js" integrity="sha384-N289jFnhk8IAQt9Y7MeHcZmF0kvMPJZGHMKFGjuikkXIYaCSRNdEZO58rJfmBC/7"></script>
+</body>
+</html>

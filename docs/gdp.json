@@ -1,0 +1,20 @@
+{
+ "note": "India real GDP growth, year-on-year %, as published at each release. Only figures confirmed in the cited source are recorded; a period absent from a vintage means we did not record it, not that it was withdrawn.",
+ "vintages": [
+  {"released": "2025-08-29", "base": "2011-12",
+   "source": "https://www.newsonair.gov.in/indias-gdp-grows-to-a-five-quarter-high-of-7-8-in-first-quarter-of-fy-2025-26",
+   "values": {"2025-26 Q1": {"value": "7.8"}}},
+  {"released": "2025-11-28", "base": "2011-12",
+   "source": "https://www.business-standard.com/economy/news/india-s-q2-fy26-gdp-comes-in-at-8-2-supported-by-robust-expenditure-125112800720_1.html",
+   "values": {"2025-26 Q2": {"value": "8.2"}}},
+  {"released": "2026-02-27", "base": "2022-23",
+   "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/feb/doc2026227806801.pdf ; Q2 from https://www.outlookbusiness.com/economy-and-policy/indias-q3-gdp-slows-to-78-in-first-print-under-new-202223-base-year",
+   "values": {"2025-26 Q2": {"value": "8.4"}, "2025-26 Q3": {"value": "7.8"}, "2025-26 FY": {"value": "7.6"}}},
+  {"released": "2026-06-05", "base": "2022-23",
+   "source": "https://ianslive.in/india-clocks-robust-77-pc-gdp-growth-in-2025-26-q4-growth-at-78-pc--20260605163903",
+   "values": {"2025-26 Q4": {"value": "7.8"}, "2025-26 FY": {"value": "7.7"}}},
+  {"released": "2026-09-01", "base": "2022-23",
+   "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/sep/doc_9759_20260901_14422101.pdf",
+   "values": {"2025-26 Q1": {"value": "6.9"}, "2025-26 FY": {"value": "7.8"}, "2026-27 Q1": {"value": "7.8"}}}
+ ]
+}
