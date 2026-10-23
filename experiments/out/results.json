@@ -1,0 +1,292 @@
+{
+ "E1_integrity": {
+  "delete one record": {
+   "chain_only": 58,
+   "monthly_witness": 58,
+   "trials": 58,
+   "weekly_witness": 58
+  },
+  "edit + re-hash one record": {
+   "chain_only": 58,
+   "monthly_witness": 59,
+   "trials": 59,
+   "weekly_witness": 59
+  },
+  "edit metadata (no re-hash)": {
+   "chain_only": 59,
+   "monthly_witness": 59,
+   "trials": 59,
+   "weekly_witness": 59
+  },
+  "edit value (no re-hash)": {
+   "chain_only": 59,
+   "monthly_witness": 59,
+   "trials": 59,
+   "weekly_witness": 59
+  },
+  "rewrite + re-hash all later": {
+   "chain_only": 0,
+   "monthly_witness": 59,
+   "trials": 59,
+   "weekly_witness": 59
+  },
+  "swap two records": {
+   "chain_only": 58,
+   "monthly_witness": 58,
+   "trials": 58,
+   "weekly_witness": 58
+  },
+  "truncate tail": {
+   "chain_only": 0,
+   "monthly_witness": 58,
+   "trials": 58,
+   "weekly_witness": 58
+  }
+ },
+ "E2_revisions": {
+  "end_march_base": {
+   "2025_inr": [
+    5712140,
+    5712141
+   ],
+   "2025_usd": [
+    668326,
+    668327
+   ],
+   "2026_inr": [
+    6553861,
+    6553862
+   ],
+   "2026_usd": [
+    691107,
+    691108
+   ]
+  },
+  "inr": {
+   "delta_hist": {
+    "-1": 36,
+    "0": 226,
+    "1": 28
+   },
+   "exact": 226,
+   "identity": {
+    "checks": 59,
+    "exact": 36,
+    "mismatch": 0,
+    "rounding": 23
+   },
+   "max_abs_delta": 1,
+   "naive_flags": 64,
+   "pairs": 290,
+   "revisions_at_tolerance": 0
+  },
+  "usd": {
+   "delta_hist": {
+    "-1": 39,
+    "0": 211,
+    "1": 40
+   },
+   "exact": 211,
+   "identity": {
+    "checks": 59,
+    "exact": 44,
+    "mismatch": 0,
+    "rounding": 15
+   },
+   "max_abs_delta": 1,
+   "naive_flags": 79,
+   "pairs": 290,
+   "revisions_at_tolerance": 0
+  },
+  "year_lag": {
+   "checks": 70,
+   "exact": 51,
+   "max_abs_delta": 1
+  }
+ },
+ "E3_power": {
+  "1": {
+   "false_flags": 0,
+   "recall": 0.2,
+   "trials": 400
+  },
+  "10": {
+   "false_flags": 0,
+   "recall": 1.0,
+   "trials": 400
+  },
+  "100": {
+   "false_flags": 0,
+   "recall": 1.0,
+   "trials": 400
+  },
+  "1000": {
+   "false_flags": 0,
+   "recall": 1.0,
+   "trials": 400
+  },
+  "2": {
+   "false_flags": 0,
+   "recall": 0.97,
+   "trials": 400
+  },
+  "3": {
+   "false_flags": 0,
+   "recall": 1.0,
+   "trials": 400
+  },
+  "5": {
+   "false_flags": 0,
+   "recall": 1.0,
+   "trials": 400
+  }
+ },
+ "E4_gdp": {
+  "matrix": {
+   "2025-26 FY": [
+    [
+     "2026-02-27",
+     2,
+     "7.6"
+    ],
+    [
+     "2026-06-05",
+     3,
+     "7.7"
+    ],
+    [
+     "2026-09-01",
+     4,
+     "7.8"
+    ]
+   ],
+   "2025-26 Q1": [
+    [
+     "2025-08-29",
+     0,
+     "7.8"
+    ],
+    [
+     "2026-09-01",
+     4,
+     "6.9"
+    ]
+   ],
+   "2025-26 Q2": [
+    [
+     "2025-11-28",
+     1,
+     "8.2"
+    ],
+    [
+     "2026-02-27",
+     2,
+     "8.4"
+    ]
+   ],
+   "2025-26 Q3": [
+    [
+     "2026-02-27",
+     2,
+     "7.8"
+    ]
+   ],
+   "2025-26 Q4": [
+    [
+     "2026-06-05",
+     3,
+     "7.8"
+    ]
+   ],
+   "2026-27 Q1": [
+    [
+     "2026-09-01",
+     4,
+     "7.8"
+    ]
+   ]
+  },
+  "revisions": [
+   {
+    "across_bases": true,
+    "delta_pp": "-0.9",
+    "from": "2025-08-29",
+    "new": "6.9",
+    "old": "7.8",
+    "period": "2025-26 Q1",
+    "to": "2026-09-01"
+   },
+   {
+    "across_bases": true,
+    "delta_pp": "0.2",
+    "from": "2025-11-28",
+    "new": "8.4",
+    "old": "8.2",
+    "period": "2025-26 Q2",
+    "to": "2026-02-27"
+   },
+   {
+    "across_bases": false,
+    "delta_pp": "0.1",
+    "from": "2026-02-27",
+    "new": "7.7",
+    "old": "7.6",
+    "period": "2025-26 FY",
+    "to": "2026-06-05"
+   },
+   {
+    "across_bases": false,
+    "delta_pp": "0.1",
+    "from": "2026-06-05",
+    "new": "7.8",
+    "old": "7.7",
+    "period": "2025-26 FY",
+    "to": "2026-09-01"
+   }
+  ],
+  "schema_events": [
+   {
+    "detail": "base: '2011-12' -> '2022-23'",
+    "from": "2025-11-28",
+    "to": "2026-02-27"
+   }
+  ],
+  "vintages": 5
+ },
+ "E5_performance": {
+  "10000": {
+   "append_s": 0.34,
+   "ok": true,
+   "verify_s": 0.3
+  },
+  "100000": {
+   "append_s": 3.82,
+   "ok": true,
+   "verify_s": 3.22
+  }
+ },
+ "E6_estimates": {
+  "all_rechecked": true,
+  "rate_max": {
+   "as_on": "2026-10-09",
+   "gold_share": "14.48",
+   "rate": "96.7239",
+   "total_usd": 726027
+  },
+  "rate_min": {
+   "as_on": "2025-10-24",
+   "gold_share": "15.18",
+   "rate": "87.8443",
+   "total_usd": 695355
+  },
+  "weeks": 59
+ },
+ "dataset": {
+  "bytes": 96613,
+  "first_release": "2025-09-05",
+  "head": "fb8ce7ecf986ec041cf5ddbd41b48b1f704d0e7275ea2548de53488c8c3335b5",
+  "last_release": "2026-10-16",
+  "rows": 295,
+  "snapshots": 59
+ }
+}
